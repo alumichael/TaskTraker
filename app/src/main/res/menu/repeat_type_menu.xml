@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/no_preat"
+        android:title="Does not repeat"
+        />
+    <item
+        android:id="@+id/daily"
+        android:title="Daily"
+        />
+    <item
+        android:id="@+id/weekly_tue"
+        android:title="Weekly on Tuesday"
+        />
+    <item
+        android:id="@+id/mothly_last_tuesday"
+        android:title="Monthly on the last Tuesday"
+        />
+    <item
+        android:id="@+id/annually_jul_26"
+        android:title="Annually on July 26"
+        android:contentDescription="@string/settings"
+        />
+    <item
+        android:id="@+id/every_weekday"
+        android:title="Every weekday (Monday to Firday)"
+        />
+    <item
+        android:id="@+id/custom"
+        android:title="Custom"
+        />
+</menu>

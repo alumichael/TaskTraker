@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home"
+        android:contentDescription="@string/home"
+        />
+
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_search"
+        android:title="@string/search"
+        android:contentDescription="@string/search"
+
+        />
+
+    <item
+        android:id="@+id/notifications"
+        android:icon="@drawable/ic_bell_2"
+        android:title="@string/notification"
+        android:contentDescription="@string/notification"
+        />
+
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_setting"
+        android:title="@string/settings"
+        android:contentDescription="@string/settings"
+
+        />
+</menu>

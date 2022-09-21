@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="135dp">
+
+            <ImageView
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="27dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back_arrow" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="37dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="@string/task_tracker_strg"
+                android:textColor="@color/colorSecondary"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/user_img"
+                app:layout_constraintStart_toEndOf="@+id/back_btn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_img"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="29dp"
+                android:src="@drawable/user_mock_image"
+                app:layout_constraintBottom_toBottomOf="@+id/back_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/back_btn" />
+
+            <ImageView
+                android:id="@+id/edit_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/task_title"
+                app:layout_constraintEnd_toEndOf="@+id/user_img"
+                app:layout_constraintTop_toTopOf="@+id/task_title"
+                app:srcCompat="@drawable/ic_edit" />
+
+            <ImageView
+                android:id="@+id/save_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="14dp"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_btn"
+                app:layout_constraintEnd_toStartOf="@+id/edit_btn"
+                app:layout_constraintTop_toTopOf="@+id/edit_btn"
+                app:srcCompat="@drawable/ic_bookmark" />
+
+            <EditText
+                android:id="@+id/task_title"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/rounded_bg"
+                android:ems="10"
+                android:fontFamily="@font/poppins_light"
+                android:hint="@string/title"
+                android:inputType="text"
+                android:textColorHint="@color/colorSecondary"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/save_btn"
+                app:layout_constraintStart_toStartOf="@+id/back_btn"
+                app:layout_constraintTop_toBottomOf="@+id/title" />
+
+            <EditText
+                android:id="@+id/edt_content"
+                android:layout_width="0dp"
+                android:layout_height="147dp"
+                android:background="@drawable/rounded_primary_bg"
+                android:ems="10"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:hint="@string/description_strg"
+                android:text="@string/content_txt"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/edit_btn"
+                app:layout_constraintStart_toStartOf="@+id/back_btn"
+                app:layout_constraintTop_toBottomOf="@+id/task_title" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_primary_bg"
+                app:layout_constraintEnd_toEndOf="@+id/edt_content"
+                app:layout_constraintStart_toStartOf="@+id/edt_content"
+                app:layout_constraintTop_toBottomOf="@+id/edt_content">
+
+
+                <ImageView
+                    android:id="@+id/attach_image_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView5"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_img" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/attach_image_btn"
+                    app:layout_constraintEnd_toStartOf="@+id/pick_color_btn"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/attach_image_btn"
+                    app:layout_constraintTop_toTopOf="@+id/attach_image_btn"
+                    app:srcCompat="@drawable/ic_bell" />
+
+                <ImageView
+                    android:id="@+id/pick_color_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+                    app:layout_constraintEnd_toStartOf="@+id/save_box_btn"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/imageView5"
+                    app:layout_constraintTop_toTopOf="@+id/imageView5"
+                    app:srcCompat="@drawable/ic_color_pallete" />
+
+                <ImageView
+                    android:id="@+id/save_box_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/pick_color_btn"
+                    app:layout_constraintStart_toEndOf="@+id/pick_color_btn"
+                    app:layout_constraintTop_toTopOf="@+id/pick_color_btn"
+                    app:srcCompat="@drawable/ic_save_box" />
+
+                <ImageView
+                    android:id="@+id/other_option_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/save_box_btn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/save_box_btn"
+                    app:srcCompat="@drawable/ic_overflow_menu" />
+
+                <ImageView
+                    android:id="@+id/redo_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="38dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/other_option_btn"
+                    app:layout_constraintEnd_toStartOf="@+id/other_option_btn"
+                    app:layout_constraintTop_toTopOf="@+id/other_option_btn"
+                    app:srcCompat="@drawable/ic_forward" />
+
+                <ImageView
+                    android:id="@+id/undo_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/redo_btn"
+                    app:layout_constraintEnd_toStartOf="@+id/redo_btn"
+                    app:layout_constraintTop_toTopOf="@+id/redo_btn"
+                    app:srcCompat="@drawable/ic_backward" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/clock_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="22dp"
+                app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                app:srcCompat="@drawable/ic_clock" />
+
+            <TextView
+                android:id="@+id/start_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/start_date_strg"
+                android:textColor="@color/colorSecondary"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/clock_btn"
+                app:layout_constraintStart_toEndOf="@+id/clock_btn"
+                app:layout_constraintTop_toTopOf="@+id/clock_btn" />
+
+            <TextView
+                android:id="@+id/start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/start_time"
+                android:textAllCaps="true"
+                android:textColor="@color/colorSecondary"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/start_date"
+                app:layout_constraintStart_toEndOf="@+id/start_date"
+                app:layout_constraintTop_toTopOf="@+id/start_date" />
+
+            <CheckBox
+                android:id="@+id/all_day_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:buttonTint="@color/colorSecondary"
+                android:checked="false"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/all_day_txt"
+                android:textColor="@color/colorSecondary"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/start_time"
+                app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+                app:layout_constraintTop_toTopOf="@+id/start_time" />
+
+            <TextView
+                android:id="@+id/repeat_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/does_not_repeat"
+                android:textColor="@color/colorSecondary"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/start_date"
+                app:layout_constraintTop_toBottomOf="@+id/start_date" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/repeat_type"
+                app:layout_constraintStart_toEndOf="@+id/repeat_type"
+                app:layout_constraintTop_toTopOf="@+id/repeat_type"
+                app:srcCompat="@drawable/ic_chevron_downward" />
+
+            <ImageView
+                android:id="@+id/imageView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="@+id/clock_btn"
+                app:layout_constraintTop_toBottomOf="@+id/repeat_type"
+                app:srcCompat="@drawable/ic_stopwatch" />
+
+            <TextView
+                android:id="@+id/start_watch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:background="@drawable/rounded_boarder"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/start_watch"
+                android:textAllCaps="true"
+                android:textColor="@color/colorSecondary"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+                app:layout_constraintStart_toEndOf="@+id/imageView13"
+                app:layout_constraintTop_toTopOf="@+id/imageView13" />
+
+            <View
+                android:id="@+id/space"
+                android:layout_width="4dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="4dp"
+                android:background="@color/colorSecondary"
+                app:layout_constraintBottom_toBottomOf="@+id/start_watch"
+                app:layout_constraintStart_toEndOf="@+id/start_watch"
+                app:layout_constraintTop_toTopOf="@+id/start_watch" />
+
+            <TextView
+                android:id="@+id/stop_watch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/rounded_boarder"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/stop_watch"
+                android:textAllCaps="true"
+                android:textColor="@color/colorSecondary"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+                app:layout_constraintStart_toEndOf="@+id/space"
+                app:layout_constraintTop_toTopOf="@+id/imageView13" />
+
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_border_pale_bg"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/duration_diff"
+                android:textColor="@color/colorSecondary"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+                app:layout_constraintEnd_toEndOf="@+id/all_day_checkbox"
+                app:layout_constraintTop_toTopOf="@+id/imageView13" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="37dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/task_created"
+                android:textColor="@color/colorSecondary"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/imageView13"
+                app:layout_constraintTop_toBottomOf="@+id/start_watch" />
+
+            <ImageView
+                android:id="@+id/switch_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/textView7"
+                app:layout_constraintEnd_toEndOf="@+id/duration"
+                app:layout_constraintTop_toTopOf="@+id/textView7"
+                app:srcCompat="@drawable/ic_switch_arrows" />
+
+            <ScrollView
+                android:id="@+id/scrollView2"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="29dp"
+                android:nestedScrollingEnabled="true"
+                android:scrollbarSize="3dp"
+                android:scrollbarStyle="outsideInset"
+                android:scrollbarThumbVertical="@color/colorSecondary"
+                android:scrollbarTrackVertical="@color/grey_light"
+                android:scrollbars="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/task_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="8dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="4"
+                        tools:listitem="@layout/task_item" />
+
+                </LinearLayout>
+            </ScrollView>
+
+
+            <ProgressBar
+                android:id="@+id/progressBar_task1"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="82dp"
+                android:layout_height="8dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="74dp"
+                android:layout_marginEnd="-17dp"
+                android:progress="20"
+                android:progressBackgroundTint="@color/grey_light"
+                android:progressBackgroundTintMode="multiply"
+                android:progressDrawable="@drawable/progress_bar_drawable"
+                android:progressTint="@color/green_fade"
+                android:rotation="270"
+                app:layout_constraintEnd_toStartOf="@+id/progressBar_task2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar_task2"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="82dp"
+                android:layout_height="8dp"
+                android:layout_marginTop="74dp"
+                android:layout_marginEnd="8dp"
+                android:progress="25"
+                android:progressBackgroundTint="@color/grey_light"
+                android:progressBackgroundTintMode="multiply"
+                android:progressDrawable="@drawable/progress_bar_drawable"
+                android:progressTint="@color/purple_fade"
+                android:rotation="270"
+                app:layout_constraintEnd_toStartOf="@+id/progressBar_task3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/progressBar_task1"
+                app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar_task3"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="82dp"
+                android:layout_height="8dp"
+                android:layout_marginStart="-35dp"
+                android:layout_marginTop="74dp"
+                android:layout_marginEnd="4dp"
+                android:progress="45"
+                android:progressBackgroundTint="@color/grey_light"
+                android:progressBackgroundTintMode="multiply"
+                android:progressDrawable="@drawable/progress_bar_drawable"
+                android:progressTint="@color/red_fade"
+                android:rotation="270"
+                app:layout_constraintEnd_toStartOf="@+id/progressBar_task4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/progressBar_task2"
+                app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar_task4"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="82dp"
+                android:layout_height="8dp"
+                android:layout_marginStart="-35dp"
+                android:layout_marginTop="74dp"
+                android:layout_marginEnd="4dp"
+                android:progress="32"
+                android:progressBackgroundTint="@color/grey_light"
+                android:progressBackgroundTintMode="multiply"
+                android:progressDrawable="@drawable/progress_bar_drawable"
+                android:progressTint="@color/yellow_fade"
+                android:rotation="270"
+                app:layout_constraintEnd_toStartOf="@+id/progressBar_task5"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/progressBar_task3"
+                app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+            <ProgressBar
+                android:id="@+id/progressBar_task5"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="82dp"
+                android:layout_height="8dp"
+                android:layout_marginStart="-35dp"
+                android:layout_marginTop="74dp"
+                android:layout_marginEnd="4dp"
+                android:progress="54"
+                android:progressBackgroundTint="@color/grey_light"
+                android:progressBackgroundTintMode="multiply"
+                android:progressDrawable="@drawable/progress_bar_drawable"
+                android:progressTint="@color/blue_fade"
+                android:rotation="270"
+                app:layout_constraintEnd_toStartOf="@+id/progressBar_task6"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/progressBar_task4"
+                app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+            <ProgressBar
+                android:id="@+id/progressBar_task6"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="82dp"
+                android:layout_height="8dp"
+                android:layout_marginStart="-17dp"
+                android:layout_marginTop="74dp"
+                android:layout_marginEnd="30dp"
+                android:progress="73"
+                android:progressBackgroundTint="@color/grey_light"
+                android:progressBackgroundTintMode="multiply"
+                android:progressDrawable="@drawable/progress_bar_drawable"
+                android:progressTint="@color/colorPrimary"
+                android:rotation="270"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/progressBar_task5"
+                app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/task_1"
+                android:textColor="@color/grey"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/progressBar_task1"
+                app:layout_constraintStart_toStartOf="@+id/progressBar_task1"
+                app:layout_constraintTop_toBottomOf="@+id/progressBar_task1" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/task_2"
+                android:textColor="@color/grey"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/progressBar_task2"
+                app:layout_constraintStart_toStartOf="@+id/progressBar_task2"
+                app:layout_constraintTop_toBottomOf="@+id/progressBar_task2" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/task_3"
+                android:textColor="@color/grey"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/progressBar_task3"
+                app:layout_constraintStart_toStartOf="@+id/progressBar_task3"
+                app:layout_constraintTop_toBottomOf="@+id/progressBar_task3" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/task_4"
+                android:textColor="@color/grey"
+                android:textSize="12sp"
+
+                app:layout_constraintEnd_toEndOf="@+id/progressBar_task4"
+                app:layout_constraintStart_toStartOf="@+id/progressBar_task4"
+                app:layout_constraintTop_toBottomOf="@+id/progressBar_task4" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/task_5"
+                android:textColor="@color/grey"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/progressBar_task5"
+                app:layout_constraintStart_toStartOf="@+id/progressBar_task5"
+                app:layout_constraintTop_toBottomOf="@+id/progressBar_task5" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/task_6"
+                android:textColor="@color/grey"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/progressBar_task6"
+                app:layout_constraintStart_toStartOf="@+id/progressBar_task6"
+                app:layout_constraintTop_toBottomOf="@+id/progressBar_task6" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:fabCradleMargin="8dp"
+        app:fabCradleVerticalOffset="8dp"
+        app:fabCradleRoundedCornerRadius="20dp"
+        android:layout_gravity="bottom">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            app:menu="@menu/bottom_app_bar" />
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_cross"
+        app:tint="@android:color/white"
+        app:backgroundTint="@color/colorPrimary"
+        app:layout_anchor="@id/bottomAppBar" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#34A853</color>
+    <color name="colorPrimaryVariant">#B8FDBB</color>
+    <color name="colorSecondary">#2D2F48</color>
+    <color name="colorSecondaryVariant">#121429</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey_light">#E5E4E4</color>
+    <color name="grey">#979798</color>
+    <color name="pale">#FDB8B8</color>
+    <color name="colorSecondaryTransparent">#801E1F4B</color>
+
+    <color name="purple_fade">#CAB8FD</color>
+    <color name="red_fade">#FDB8B8</color>
+    <color name="blue_fade">#5398FF</color>
+    <color name="yellow_fade">#FDE1B8</color>
+    <color name="green_fade">#B8FDBB</color>
+
+    <integer-array name="randomcolors">
+        <item>@color/purple_fade</item>
+        <item>@color/grey</item>
+        <item>@color/red_fade</item>
+        <item>@color/blue_fade</item>
+        <item>@color/yellow_fade</item>
+        <item>@color/green_fade</item>
+    </integer-array>
+
+</resources>
